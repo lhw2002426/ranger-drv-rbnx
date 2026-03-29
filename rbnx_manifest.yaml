@@ -1,19 +1,20 @@
+manifestVersion: 1
+
+build:
+  script: rbnx/build.sh
+
 package:
-  name: ranger_drv
+  id: com.vendor.ranger_drv
+  name: ranger_drv_rbnx
   version: 0.0.1
-  description: ranger driver
-  maintainer: zhengwu
-  maintainer_email: wuzheng_study@163.com
+  vendor: vendor
+  description: Ranger driver package for ROS2 launch only
   license: Apache-2.0
-  # build_script: rbnx/build.sh # by default
 
-primitives:
-  - name: prm::base.move  # 标准能力名称 (如 cap::grasp.move)
-    version: 0.0.1-impl-alpha
-    start_script: rbnx/start.sh    # 启动脚本路径 (相对于 package 根目录，如 "rbnx/start_cap.sh")
-    stop_script: rbnx/stop.sh     # 停止脚本路径 (相对于 package 根目录，如 "rbnx/stop_cap.sh")
-    input_schema: '{}'              
-    output_schema: '{}'  
-
-skills:
-  # no skills
+nodes:
+  - id: com.vendor.ranger_driver
+    type: binary
+    start: >
+      source /opt/ros/humble/setup.bash &&
+      source install/setup.sh &&
+      exec bash rbnx/start.sh
