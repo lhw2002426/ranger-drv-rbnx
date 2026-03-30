@@ -1,7 +1,7 @@
 manifestVersion: 1
 
 build:
-  script: rbnx/build.sh
+  script: scripts/build.sh
 
 package:
   id: com.vendor.ranger_drv
@@ -17,4 +17,4 @@ nodes:
     start: >
       source /opt/ros/humble/setup.bash &&
       source install/setup.sh &&
-      exec bash rbnx/start.sh
+      exec bash scripts/start.sh

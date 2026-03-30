@@ -6,6 +6,6 @@ Ranger 底盘驱动包。
 
 - 不增加 Python 节点
 - 不增加 agent skill
-- 仅通过 `rbnx/start.sh` 拉起 ROS2 驱动 launch
+- 仅通过 `scripts/start.sh` 拉起 ROS2 驱动 launch
 
 用途就是把驱动进程纳入 Robonix 的 package 生命周期管理。
